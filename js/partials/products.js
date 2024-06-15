@@ -1,9 +1,7 @@
 async function getGames(filters = null) {
-  const url = getBackendUrl();
-  console.log(url);
   const filtersToAdd = { ...filters };
   const response = await fetch(
-    `${url}/api/products?plataform=${filtersToAdd.plataform}`
+    `https://proyectofinalstrologo-backend-production.up.railway.app/api/products?plataform=${filtersToAdd.plataform}`
   );
   if (!response.ok) {
     return false;

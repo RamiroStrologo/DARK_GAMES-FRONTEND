@@ -1,27 +1,31 @@
 //FUNCION QUE REGISTRA AL USUARIO
 async function logUp(data) {
-  const url = getBackendUrl();
   const jsonData = JSON.stringify(data);
-  const response = await fetch(`${url}/api/auth/register`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: jsonData,
-  });
+  const response = await fetch(
+    `https://proyectofinalstrologo-backend-production.up.railway.app/api/auth/register`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonData,
+    }
+  );
   return response.ok ? true : false;
 }
 
 async function logIn(data) {
-  const url = getBackendUrl();
   const jsonData = JSON.stringify(data);
-  const response = await fetch(`${url}/api/auth/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: jsonData,
-  });
+  const response = await fetch(
+    `https://proyectofinalstrologo-backend-production.up.railway.app/api/auth/login`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonData,
+    }
+  );
   if (response.ok) {
     const jwt = await response.json();
     return jwt;

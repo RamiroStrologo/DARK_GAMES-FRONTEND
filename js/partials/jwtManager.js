@@ -4,13 +4,15 @@ function checkJwtExist() {
 }
 
 async function authJwt(jwt) {
-  const url = getBackendUrl();
-  const response = await fetch(`${url}/api/auth/token`, {
-    headers: {
-      Authorization: `Bearer ${jwt}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  const response = await fetch(
+    `https://proyectofinalstrologo-backend-production.up.railway.app/api/auth/token`,
+    {
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
   return response.ok ? true : false;
 }
 
