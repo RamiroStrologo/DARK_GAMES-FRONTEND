@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "PROYECTOPROYECTO FINAL - FRONTEND/",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "."
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "PROYECTO FINAL - FRONTEND/$1"
+    }
+  ]
+}
