@@ -1,7 +1,9 @@
 async function getGames(filters = null) {
+  const url = getBackendUrl();
+  console.log(url);
   const filtersToAdd = { ...filters };
   const response = await fetch(
-    `http://localhost:8080/api/products?plataform=${filtersToAdd.plataform}`
+    `${url}/api/products?plataform=${filtersToAdd.plataform}`
   );
   if (!response.ok) {
     return false;

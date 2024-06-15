@@ -4,7 +4,8 @@ function checkJwtExist() {
 }
 
 async function authJwt(jwt) {
-  const response = await fetch('http://localhost:8080/api/auth/token', {
+  const url = getBackendUrl();
+  const response = await fetch(`${url}/api/auth/token`, {
     headers: {
       Authorization: `Bearer ${jwt}`,
       'Content-Type': 'application/json',

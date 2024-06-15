@@ -2,7 +2,8 @@ window.onload = async () => {
   const jwtExist = checkJwtExist();
   if (!jwtExist) loadLogin();
   else {
-    authJwt(jwtExist);
+    const url = getUrl();
+    authJwt(jwtExist, url);
     loadTienda();
   }
 };

@@ -1,7 +1,8 @@
 //FUNCION QUE REGISTRA AL USUARIO
 async function logUp(data) {
+  const url = getBackendUrl();
   const jsonData = JSON.stringify(data);
-  const response = await fetch('http://localhost:8080/api/auth/register', {
+  const response = await fetch(`${url}/api/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -12,8 +13,9 @@ async function logUp(data) {
 }
 
 async function logIn(data) {
+  const url = getBackendUrl();
   const jsonData = JSON.stringify(data);
-  const response = await fetch('http://localhost:8080/api/auth/login', {
+  const response = await fetch(`${url}/api/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
