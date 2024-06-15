@@ -1,4 +1,4 @@
 function getBackendUrl() {
-  const backendUrl = process.env.BACKEND_URL;
+  const backendUrl = BACKEND_URL;
   return backendUrl;
 }
